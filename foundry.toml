@@ -1,0 +1,41 @@
+[profile.default]
+src = "contracts"
+out = "out"
+libs = ["lib"]
+
+# Solidity compiler version
+solc_version = "0.8.20"
+
+# Optimization
+optimizer = true
+optimizer_runs = 200
+
+# Test settings
+[profile.test]
+memory_limit = 33554432  # 32MB
+
+# Gas settings
+gas_reports = ["AdExchange", "Bidder"]
+gas_limit = 9223372036854775807  # Unlimited
+
+# Hardhat fork settings
+[profile.fork]
+fork_url = "https://testnet.monad.com"
+fork_block_number = 0
+
+# CI settings
+[profile.ci]
+# More strict settings for CI
+verbosity = 4
+fuzz_runs = 1000
+
+# Formatting
+[fmt]
+line_length = 120
+wrap_comments = true
+spaces_per_indent = 4
+
+# Documentation
+[doc]
+out = "docs/generated"
+title = "Bilbord RTB Platform"
